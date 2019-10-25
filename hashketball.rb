@@ -59,10 +59,16 @@ def player_stats(player)
   hash = game_hash()
   home_players = hash[:home][:players].map{|player_data| player_data[:player_name]}
   away_players = hash[:away][:players].map{|player_data| player_data[:player_name]}
-  stats = []
+  stats = {}
   if home_players.include? player
     index = home_players.index(player)
-    stats = [hash[:home][:players][index][:number], hash[:home][:players][index][:shoe], hash[:home][:players][index][:points], hash[:home][:players][index][:rerounds], hash[:home][:players][index][:assists], hash[:home][:players][index][:steals], hash[:home][:players][index][:blocks], hash[:home][:players][index][:slam_dunks]]
+    stats{:number} = hash[:home][:players][index][:number]
+    stats[:shoe] = hash[:home][:players][index][:shoe]
+    stats[:points] = hash[:home][:players][index][:points]
+    stats[:rerounds] = hash[:home][:players][index][:rerounds]
+    stats[:steals] = hash[:home][:players][index][:assists]
+    stats[:blocks] = hash[:home][:players][index][:steals]
+    stats[:slam_dunks] = hash[:home][:players][index][:slam_dunks]]
   elsif away_players.include? player
     index = away_players.index(player)
     stats = [hash[:home][:players][index][:number], hash[:home][:players][index][:shoe], hash[:home][:players][index][:points], hash[:home][:players][index][:rerounds], hash[:home][:players][index][:assists], hash[:home][:players][index][:steals], hash[:home][:players][index][:blocks], hash[:home][:players][index][:slam_dunks]]
