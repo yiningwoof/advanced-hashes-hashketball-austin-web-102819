@@ -74,7 +74,7 @@ def player_stats(player)
     index = away_players.index(player)
     stats[:number] = hash[:away][:players][index][:number]
     stats[:shoe] = hash[:away][:players][index][:shoe]
-    stats[:points] = hash[:home][:players][index][:points]
+    stats[:points] = hash[:away][:players][index][:points]
     stats[:rerounds] = hash[:away][:players][index][:rerounds]
     stats[:assists] = hash[:away][:players][index][:assists]
     stats[:steals] = hash[:away][:players][index][:steals]
