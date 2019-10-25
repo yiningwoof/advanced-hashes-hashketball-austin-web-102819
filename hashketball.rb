@@ -62,7 +62,7 @@ def player_stats(player)
   stats = {}
   if home_players.include? player
     index = home_players.index(player)
-    stats{:number} = hash[:home][:players][index][:number]
+    stats[:number] = hash[:home][:players][index][:number]
     stats[:shoe] = hash[:home][:players][index][:shoe]
     stats[:points] = hash[:home][:players][index][:points]
     stats[:rerounds] = hash[:home][:players][index][:rerounds]
@@ -72,7 +72,7 @@ def player_stats(player)
     stats[:slam_dunks] = hash[:home][:players][index][:slam_dunks]
   elsif away_players.include? player
     index = away_players.index(player)
-    stats{:number} = hash[:home][:players][index][:number]
+    stats[:number] = hash[:home][:players][index][:number]
     stats[:shoe] = hash[:home][:players][index][:shoe]
     stats[:points] = hash[:home][:players][index][:points]
     stats[:rerounds] = hash[:home][:players][index][:rerounds]
