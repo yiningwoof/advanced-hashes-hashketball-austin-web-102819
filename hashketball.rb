@@ -100,5 +100,5 @@ def big_shoe_rebounds
   sizes = shoe_size.values.map{|pair| pair[0]}
   max = sizes.max
   name = shoe_size.key(max)
-  rebounds = shoe_size[name][1]
+  rebound = shoe_size[name][1]
 end
