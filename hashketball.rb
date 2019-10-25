@@ -55,4 +55,15 @@ def player_numbers(team)
     hash.each{|k, v| v[:players].map{|player| player[:number]} if v[:team_name] == team}
 end
 
-def player_stats
+def player_stats(player)
+  hash = game_hash()
+  home_players = hash[:home][:players].map{|player_data| player_data[:player_name]}
+  away_players = hash[:away][:players].map{|player_data| player_data[:player_name]}
+  stats = []
+  if home_players.include? player
+    index = home_players.index(player)
+    stats = [(hash[:home][:players][index][:number], hash[:home][:players][index][:shoe], hash[:home][:players][index][:points], hash[:home][:players][index][:rerounds]]
+  elsif away_players.include? player
+    index = away_players.index(player)
+    stats = [(hash[:home][:players][index][:number], hash[:home][:players][index][:shoe], hash[:home][:players][index][:points], hash[:home][:players][index][:rerounds]]
+  end
