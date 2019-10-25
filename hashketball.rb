@@ -97,7 +97,8 @@ def big_shoe_rebounds
     index = away_players.index(player)
     shoe_size[player] = hash[:away][:players][index][:shoe], hash[:home][:players][index][:rebounds]]
   }
-  max = shoe_size.values.max
+  sizes = shoe_size.values.map{|pairs| pairs[0]}
+  max = sizes.values.max
   name = shoe_size.key(max)
-  
+  rebounds = shoe_size[name][1]
 end
