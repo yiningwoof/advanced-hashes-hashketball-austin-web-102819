@@ -54,3 +54,5 @@ def player_numbers(team)
     hash = game_hash()
     hash.each{|k, v| return v[:players].map{|player| player[:number]} if v[:team_name] == team}
 end
+
+def 
