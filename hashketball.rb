@@ -86,14 +86,18 @@ end
 
 def big_shoe_rebounds
   hash = game_hash()
+  shoe_size = {}
   home_players = hash[:home][:players].map{|player_data| player_data[:player_name]}
   away_players = hash[:away][:players].map{|player_data| player_data[:player_name]}
-  if home_players.include? player
-    index = home_players.index(player)
-    size = hash[:home][:players][index][:shoe]
-  elsif away_players.include? player
-    index = away_players.index(player)
-    size = hash[:away][:players][index][:shoe]
-  end
+  home_players.each{|player|
+    if home_players.include? player
+      index = home_players.index(player)
+      shoe_size[] = hash[:home][:players][index][:shoe]
+    elsif away_players.include? player
+      index = away_players.index(player)
+      size = hash[:away][:players][index][:shoe]
+    end
+  }
+  
   size
   
