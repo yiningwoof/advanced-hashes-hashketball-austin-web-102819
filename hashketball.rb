@@ -98,5 +98,5 @@ def big_shoe_rebounds
     shoe_size[player] = hash[:away][:players][index][:shoe]
   }
   max = shoe_size.values.max
-  
+  shoe_size.key(max)
 end
