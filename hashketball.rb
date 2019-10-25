@@ -82,4 +82,18 @@ def player_stats(player)
     stats[:slam_dunks] = hash[:away][:players][index][:slam_dunks]
   end
   stats
+end
+
+def big_shoe_rebounds
+  hash = game_hash()
+  home_players = hash[:home][:players].map{|player_data| player_data[:player_name]}
+  away_players = hash[:away][:players].map{|player_data| player_data[:player_name]}
+  if home_players.include? player
+    index = home_players.index(player)
+    size = hash[:home][:players][index][:shoe]
+  elsif away_players.include? player
+    index = away_players.index(player)
+    size = hash[:away][:players][index][:shoe]
   end
+  size
+  
