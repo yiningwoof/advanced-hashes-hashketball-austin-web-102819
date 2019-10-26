@@ -118,3 +118,8 @@ def most_points_scored
   max = all_points.values.max()
   name = all_points.key(max)
 end
+
+def winning_team
+  hash = game_hash()
+  home_points = hash[:home][:players].reduce(0){|sum, player| sum + player[:points]}
+  home_points = hash[:home][:players].reduce(0){|sum, player| sum + player[:points]}
