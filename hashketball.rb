@@ -125,3 +125,6 @@ def winning_team
   away_points = hash[:away][:players].reduce(0){|sum, player| sum + player[:points]}
   home_points > away_points ? hash[:home][:team_name] : hash[:away][:team_name]
 end
+
+def player_with_longest_name
+  
