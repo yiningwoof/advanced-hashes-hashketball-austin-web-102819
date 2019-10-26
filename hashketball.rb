@@ -148,5 +148,6 @@ def long_name_steals_a_ton?
   }
   max = all_steals.values.max()
   most_steals_name = all_steals.key(max)
-  longest_name = 
+  most_steals_name == player_with_longest_name()
+  
 end
