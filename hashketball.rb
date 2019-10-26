@@ -116,5 +116,5 @@ def most_points_scored
   all_points[player] = hash[:away][:players][index][:points]
   }
   max = all_points.values.max()
-  name = all_points.key[max]
+  name = all_points.key(max)
 end
