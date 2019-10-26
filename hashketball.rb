@@ -134,3 +134,19 @@ def player_with_longest_name
   away_longest = away_players.reduce{|a, b| a.length > b.length ? a : b}
   home_longest.length > away_longest.length ? home_longest : away_longest
 end
+
+def long_name_steals_a_ton?
+  hash = game_hash()
+  all_steals = {}
+  home_players = hash[:home][:players].map{|player_data| player_data[:player_name]}
+  away_players = hash[:away][:players].map{|player_data| player_data[:player_name]}
+  home_players.each{|player| index = home_players.index(player)
+  all_steals[player] = hash[:home][:players][index][:steals]
+  }
+  away_players.each{|player| index = away_players.index(player)
+  all_steals[player] = hash[:away][:players][index][:steals]
+  }
+  max = all_steals.values.max()
+  most_steals_name = all_steals.key(max)
+  longest_name = 
+end
