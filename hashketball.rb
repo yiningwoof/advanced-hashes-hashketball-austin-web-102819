@@ -122,4 +122,6 @@ end
 def winning_team
   hash = game_hash()
   home_points = hash[:home][:players].reduce(0){|sum, player| sum + player[:points]}
-  home_points = hash[:home][:players].reduce(0){|sum, player| sum + player[:points]}
+  away_points = hash[:away][:players].reduce(0){|sum, player| sum + player[:points]}
+  home_points > away_points ? hash[:home][:team_name] : hash[:away][:team_name]
+end
