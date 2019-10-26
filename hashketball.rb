@@ -127,4 +127,10 @@ def winning_team
 end
 
 def player_with_longest_name
-  
+  hash = game_hash()
+  home_players = hash[:home][:players].map{|player_data| player_data[:player_name]}
+  away_players = hash[:away][:players].map{|player_data| player_data[:player_name]}
+  home_longest = home_players.reduce{|a, b| a.length > b.length ? a : b}
+  away_longest = away_players.reduce{|a, b| a.length > b.length ? a : b}
+  home_longest.length > away_longest.length ? home_longest : away_longest
+end
