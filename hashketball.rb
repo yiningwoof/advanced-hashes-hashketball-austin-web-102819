@@ -118,6 +118,5 @@ def most_points_scored
     all_points[player] = hash[:away][:players][index][:points]
   }
   max = all_points.values.max()
-  i = points.index(max)
   name = all_points.keys[i]
   rebound = shoe_size[name][1]
