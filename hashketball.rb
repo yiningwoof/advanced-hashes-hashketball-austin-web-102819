@@ -106,19 +106,19 @@ end
 
 def most_points_scored
     hash = game_hash()
-  shoe_size = {}
+  all_points = {}
   home_players = hash[:home][:players].map{|player_data| player_data[:player_name]}
   away_players = hash[:away][:players].map{|player_data| player_data[:player_name]}
   home_players.each{|player|
     index = home_players.index(player)
-    shoe_size[player] = [hash[:home][:players][index][:shoe], hash[:home][:players][index][:points]]
+    all_points[player] = [hash[:home][:players][index][:shoe], hash[:home][:players][index][:points]]
   }
   away_players.each{|player|
     index = away_players.index(player)
-    shoe_size[player] = [hash[:away][:players][index][:shoe], hash[:away][:players][index][:points]]
+    all_points[player] = [hash[:away][:players][index][:shoe], hash[:away][:players][index][:points]]
   }
-  points = shoe_size.values.map{|pair| pair[1]}
+  points = all_points.values.map{|pair| pair[1]}
   max = points.max()
-  i = sizes.index(max)
-  name = shoe_size.keys[i]
+  i = points.index(max)
+  name = all_points.keys[i]
   rebound = shoe_size[name][1]
